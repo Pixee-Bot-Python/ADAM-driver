@@ -1,4 +1,4 @@
-# Adam-driver
+# ADAM-driver
 
 This is a reader for the ADAM-6018+ TC reader.
 
