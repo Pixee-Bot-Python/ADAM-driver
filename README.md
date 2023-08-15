@@ -23,3 +23,9 @@ With one thermocouple attached to input 1, and the thermocouple installed in a c
 ```
 [48.37, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 ```
+
+# Configuring ADAM devices
+
+The ADAM devices only connect through Ethernet, _and don't respond to ping_. Yeah, have fun with that. They must be configured using the [Advantech ADAM/APAX Utility](https://www.advantech.com/en-us/support/details/utility?id=1-2AKUDB) using a Windows box.
+
+To use the Advantech ADAM Utility, plug the ADAM device into Ethernet. On the same network, run the ADAM Utility on a Windows machine. In the ADAM Utility, select Tools -> Search Device, and hopefully the ADAM device will show up in the left hand column. From there, change the IP / subnet / gateway to something that works. I would suggest using static IP. Have fun.
