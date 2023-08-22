@@ -26,7 +26,7 @@ class AdamClient:
         converted_values = [(raw_temperature / 65535.0) * (range_max - range_min) + range_min for raw_temperature in reg_values]
         return [round(value, 2) for value in converted_values]
 
-    def read_and_convert(self, address=0, count=8):
+    def read_temps(self, address=0, count=8):
         if self.client.open():
             regs = self.client.read_holding_registers(address, count)
             self.client.close()
