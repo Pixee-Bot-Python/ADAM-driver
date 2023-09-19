@@ -18,6 +18,8 @@ class AdamClient:
         
         self.client = ModbusClient(host=host, port=port, unit_id=unit_id)
         self.thermocouple_type = thermocouple_type
+        self.chans_in = 8
+        self.channel_names = [f"Thermo Channel {i+1}" for i in range(self.chans_in)]
 
     def convert(self, reg_values):
         thermocouple_range = self.thermocouple_ranges[self.thermocouple_type]
@@ -36,4 +38,19 @@ class AdamClient:
                 raise Exception("Read failed")
         else:
             raise Exception("Failed to Connect")
+        
+    def get_channel_names(self):
+        return self.channel_names
+    
+    def set_channel_name(self, position, name):
+        """
+        Set the name of a specific channel based on its position.
+
+        Args:
+            position (int): Position of the channel (0-based index).
+            name (str): New name for the channel.
+        """
+        if position < 0 or position >= self.chans_in:
+            raise ValueError(f"Invalid position value. Must be between 0 and {self.chans_in-1}.")
+        self.channel_names[position] = name
 
