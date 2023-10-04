@@ -1,4 +1,4 @@
-from AdamClient import AdamClient
+from ADAMModbusDriver.AdamClient import AdamClient
 
 ADAM_IP = "172.18.120.250"
 client = AdamClient(ADAM_IP, thermocouple_type="K")
