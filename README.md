@@ -1,5 +1,7 @@
 # ADAM-driver
 
+![alt text](/image/ADAM.png "ADAM Driver")
+
 This is a reader for the ADAM-6018+ TC reader.
 
 To use, include the AdamClient.py file in your project.
